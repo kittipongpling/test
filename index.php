@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+
 </head>
 <body>
+    
     <?php
     $sever="localhost";
     $user="root";
@@ -19,7 +22,9 @@
         die("Connection failed : ".$con->connect_error);
     }
     $con->set_charset("utf8");
+    
     ?>
+    <div>
             <table border="1">
             <tr>
                 <td>ลำดับ</td>
@@ -28,6 +33,8 @@
                 <td>อายุ</td>
                 <td>เบอโทรศัพท์</td>
             </tr>
+</div>  
+            
             
     <?php
     $sql="SELECT *FROM data";
@@ -44,6 +51,7 @@
                 <td><?php echo $row["d_age"];?></td>
                 <td><?php echo $row["d_tel"];?></td>
             </tr>
+    
                 
 
 
@@ -57,5 +65,8 @@
 
     $con->close();
 ?>
+<div>
+            <a href="model/add.html">เพิ่มข้อมูล</a>
+            </div>
 </body>
 </html>
